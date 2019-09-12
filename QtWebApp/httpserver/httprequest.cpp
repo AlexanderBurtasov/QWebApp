@@ -543,6 +543,7 @@ void HttpRequest::parseMultiPartFile()
 
 HttpRequest::~HttpRequest()
 {
+    qDebug("HttpRequest: this (%p)", static_cast<void*>(this));
     foreach(QByteArray key, uploadedFiles.keys())
     {
         QTemporaryFile* file=uploadedFiles.value(key);
